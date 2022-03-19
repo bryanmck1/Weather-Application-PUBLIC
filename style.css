@@ -1,0 +1,486 @@
+html,
+body {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: rgb(249, 247, 245);
+  color: black;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 220rem;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(249, 247, 245);
+}
+.pac-icon {
+  display: none;
+}
+
+.pac-container {
+  background-color: rgb(249, 247, 245);
+  color: white;
+}
+
+#logoimg {
+  height: 4rem;
+  width: 4.5rem;
+  margin: calc(1rem + 1vw);
+}
+
+.search {
+  display: flex;
+  margin: calc(1rem + 1vw);
+  border: 0.5px solid black;
+  border-radius: 5px;
+  align-items: center;
+  width: calc(18rem + 1vw);
+}
+
+#searchIcon {
+  margin: 0.5rem;
+}
+
+#autocomplete {
+  border: none;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Top module that shows city name and current temps  */
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+}
+
+#cityName {
+  font-size: calc(3.5rem + 1vw);
+  margin: 0.5rem;
+  font-weight: 600;
+}
+
+#currentTemp {
+  font-size: calc(3.85rem + 1vw);
+  margin: 0.5rem;
+}
+
+.temps {
+  display: flex;
+}
+
+#hiTemp,
+#lowTemp,
+#weatherDescription {
+  margin: 0.25rem;
+  font-size: calc(1.7rem + 1vw);
+}
+
+#hiLowTemps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(1.1rem + 1vw);
+}
+
+#feelsLikeTemp {
+  margin: 0.1rem;
+  font-size: calc(0.9rem + 1vw);
+  font-weight: 100;
+}
+
+#weatherDescription {
+  font-size: calc(1.2rem + 1vw);
+  text-transform: capitalize;
+}
+
+/* Hourly forecast container module*/
+
+#hourlyDailyContainer {
+  max-width: 120rem;
+}
+
+#entireHourlyMod {
+  height: 150px;
+  display: flex;
+  max-width: 120rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hourlyDivs {
+  font-size: calc(1.7rem + 1vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.35rem;
+}
+
+.hourlyTime,
+.hourlyTemp {
+  margin: 0.75rem;
+}
+
+/* Daily forecast container module  */
+#entireDailyMod {
+  max-width: 120rem;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  font-size: calc(0.95rem + 1vw);
+}
+
+.dailyDivs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+#dailyForecastHeader {
+  font-weight: 400;
+  margin-left: 2rem;
+  padding-bottom: 1rem;
+}
+
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.dailyDateDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Today's details module  */
+#todaysDetails > div {
+  max-width: 120rem;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: calc(1rem + 1vw);
+  /* margin: 2rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem; */
+}
+
+.descCapitalize {
+  text-transform: capitalize;
+}
+
+/* Air quality module  */
+
+.aqIndexDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(1rem + 1vw);
+}
+
+#aqHeader {
+  display: flex;
+  justify-content: center;
+}
+
+#airQualityIndexTitle,
+#airQualityDesc {
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.pollutionDescriptions {
+  display: flex;
+  justify-content: flex-start;
+  width: 70%;
+  flex: 1;
+}
+
+.pollutionMod {
+  max-width: 100%;
+  min-width: 0;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: calc(1rem + 1vw);
+}
+
+.aqIndexDiv,
+.pollutionMod {
+  flex: 1;
+}
+
+.pollutionDivs {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.gasDiv {
+  flex: 1;
+  width: 30%;
+}
+
+.pollutionAQI {
+  font-size: calc(0.4rem + 1vw);
+}
+
+.gasNumAndAQI {
+  margin-right: 1.2rem;
+}
+
+.hourlyIcons {
+  width: calc(3rem + 1vw);
+  height: calc(3rem + 1vw);
+}
+
+.dailyIcons {
+  width: calc(2.5rem + 1vw);
+  height: calc(2.5rem + 1vw);
+}
+
+.dailyRainIcon,
+.dailyWindIcon,
+.dailyTempIcon {
+  width: calc(2rem + 1vw);
+  height: calc(2rem + 1vw);
+  margin-right: 0.5rem;
+}
+
+.dailyRainDiv,
+.dailyWindDiv,
+.dailyTempDiv,
+.dailyDateDiv,
+.dailyIcons {
+  display: flex;
+  align-items: center;
+}
+
+#hourlyTableDiv {
+  display: none;
+}
+
+#airQualityModule {
+  display: flex;
+  flex-basis: 50%;
+  max-width: 100%;
+}
+
+#entireHourlyMod,
+#entireDailyMod,
+#todaysDetails,
+#airQualityModule,
+#hourlyTableDiv {
+  border: 1px solid #f39af0;
+  border-radius: 3rem;
+  padding: 1.5rem;
+  margin: 2rem;
+}
+
+.dailyTempSpan {
+  text-align: center;
+}
+
+/* .detailsAndQualityDesktop {
+  display: flex;
+  flex-basis: 50%;
+  width: 100%;
+} */
+
+@media only screen and (max-width: 360px) {
+  #entireDailyMod {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .dailyIcons {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  #entireHourlyMod {
+    font-size: 1.75rem;
+  }
+
+  #dailyForecastHeader {
+    padding-top: 1rem;
+  }
+
+  .hourlyIcons {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  #pollutantHeader {
+    padding-bottom: 1rem;
+  }
+
+  .pollutionMod {
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .pollutionDivs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .aqIndexDiv {
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Going from mobile to web  */
+
+@media only screen and (min-width: 900px) {
+  .hourlyAndDailyDesktop {
+    display: flex;
+    flex-basis: 50%;
+    max-height: calc(40rem + 1vh);
+  }
+
+  .search {
+    width: calc(24rem + 1vw);
+  }
+
+  #entireHourlyMod {
+    display: none;
+  }
+
+  #hourlyTableDiv {
+    flex: 1;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    font-size: calc(1.1rem + 1vw);
+  }
+
+  #hourlyTableBody > row {
+    width: 100%;
+    display: table;
+    text-align: center;
+  }
+
+  #hourlyTableBody > row > td {
+    width: 14.28%;
+    font-size: calc(0.95rem + 0.4vw);
+  }
+
+  #hourlyTableHead {
+    display: table-header-group;
+    font-size: calc(0.5rem + 0.8vw);
+    max-width: 100%;
+  }
+
+  #hourlyTableHead > row > th {
+    width: 14.28%;
+  }
+
+  #hourlyTableBody > row > td > img {
+    height: calc(1rem + 1vw);
+    width: calc(1rem + 1vw);
+  }
+
+  #hourlyTable {
+    width: 100%;
+  }
+
+  #entireDailyMod {
+    flex: 1;
+  }
+
+  .dailyDivs {
+    font-size: calc(1rem + 0.5vw);
+  }
+
+  .detailsAndQualityDesktop {
+    display: flex;
+    flex-basis: 50%;
+  }
+
+  #todaysDetails {
+    flex: 1;
+  }
+
+  #todaysDetails > div {
+    font-size: calc(1rem + 0.5vw);
+  }
+
+  #airQualityModule {
+    flex: 1;
+    font-size: 1rem;
+  }
+
+  .aqIndexDiv,
+  .pollutionMod {
+    font-size: calc(1rem + 0.5vw);
+  }
+
+  .pollutionAQI {
+    font-size: calc(0.35rem + 0.5vw);
+  }
+
+  #dailyForecastHeader {
+    font-size: calc(1rem + 0.5vw);
+    font-weight: 400;
+  }
+}

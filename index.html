@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google font below -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="div1">
+        <nav class="navBar">
+          <div class="logo">
+            <img src="img/mountain.png" alt="" id="logoimg" />
+          </div>
+          <div class="search">
+            <img src="img/search.svg" alt="" id="searchIcon" />
+            <input
+              type="text"
+              id="autocomplete"
+              placeholder="Search for a city"
+            />
+          </div>
+        </nav>
+      </div>
+
+      <div class="top module div2">
+        <div id="cityName"></div>
+
+        <div class="temps">
+          <div id="currentTemp"></div>
+          <div id="hiLowTemps">
+            <div id="hiTemp"></div>
+            <div id="lowTemp"></div>
+          </div>
+        </div>
+        <div id="feelsLikeTemp"></div>
+        <div id="weatherDescription"></div>
+      </div>
+
+      <div class="hourlyAndDailyDesktop">
+        <div id="hourlyTableDiv">
+          <table id="hourlyTable">
+            <thead id="hourlyTableHead"></thead>
+            <tbody id="hourlyTableBody"></tbody>
+          </table>
+        </div>
+
+        <div id="entireHourlyMod" class="module div3"></div>
+        <div id="entireDailyMod" class="module div4">
+          <div id="dailyForecastHeader">7-day forecast</div>
+          <hr class="style-two" />
+        </div>
+      </div>
+
+      <div class="detailsAndQualityDesktop div6">
+        <div id="todaysDetails" class="module div5">
+          <div>Today's Details</div>
+          <hr class="style-two" />
+
+          <div class="detailsDivs">
+            <span>Wind</span>
+            <span id="windDirSpeed"></span>
+          </div>
+
+          <div class="detailsDivs">
+            <span>Humidity</span>
+            <span id="humidity"></span>
+          </div>
+          <div class="detailsDivs">
+            <span>Pressure</span>
+            <span id="pressure"></span>
+          </div>
+          <div class="detailsDivs">
+            <span>Dew Point</span>
+            <span id="dewPoint"></span>
+          </div>
+          <div class="detailsDivs">
+            <span>UV Index</span>
+            <span id="uvIndex"></span>
+          </div>
+          <div class="detailsDivs">
+            <span>Visibility</span>
+            <span id="visibility"></span>
+          </div>
+          <div class="detailsDivs">
+            <span>Sunrise|Sunset</span>
+            <span id="sunriseSunset"></span>
+          </div>
+          <div class="detailsDivs">
+            <span>Cloudiness</span>
+            <span id="cloudiness"></span>
+          </div>
+        </div>
+
+        <div id="airQualityModule">
+          <div class="aqIndexDiv module">
+            <span id="airQualityIndexTitle">Air Quality Index:</span>
+            <span id="currentAirQuality"></span>
+            <br />
+            <span id="airQualityDesc"></span>
+          </div>
+
+          <div class="pollutionMod">
+            <div id="pollutantHeader">
+              Air pollutants
+              <span> <hr class="style-two" /> </span>
+            </div>
+
+            <div class="pollutionDivs">
+              <div class="gasDiv">co</div>
+              <div class="pollutionDescriptions">
+                <div class="gasNumAndAQI">
+                  <span id="co"></span><span class="pollutionAQI">AQI</span>
+                </div>
+                <span id="coDescription"></span>
+              </div>
+            </div>
+            <div class="pollutionDivs">
+              <div class="gasDiv">no2</div>
+              <div class="pollutionDescriptions">
+                <div class="gasNumAndAQI">
+                  <span id="no2"></span><span class="pollutionAQI">AQI</span>
+                </div>
+                <span id="no2Description"></span>
+              </div>
+            </div>
+            <div class="pollutionDivs">
+              <div class="gasDiv">o3</div>
+              <div class="pollutionDescriptions">
+                <div class="gasNumAndAQI">
+                  <span id="o3"></span><span class="pollutionAQI">AQI</span>
+                </div>
+                <span id="o3Description"></span>
+              </div>
+            </div>
+            <div class="pollutionDivs">
+              <div class="gasDiv">pm10</div>
+              <div class="pollutionDescriptions">
+                <div class="gasNumAndAQI">
+                  <span id="pm10"></span><span class="pollutionAQI">AQI</span>
+                </div>
+                <span id="pm10Description"></span>
+              </div>
+            </div>
+            <div class="pollutionDivs">
+              <div class="gasDiv">pm25</div>
+              <div class="pollutionDescriptions">
+                <div class="gasNumAndAQI">
+                  <span id="pm25"></span><span class="pollutionAQI">AQI</span>
+                </div>
+                <span id="pm25Description"></span>
+              </div>
+            </div>
+            <div class="pollutionDivs">
+              <div class="gasDiv">so2</div>
+              <div class="pollutionDescriptions">
+                <div class="gasNumAndAQI">
+                  <span id="so2"></span><span class="pollutionAQI">AQI</span>
+                </div>
+                <span id="so2Description"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="moment.js" type="text/Javascript"></script>
+    <script src="script.js" type="text/Javascript"></script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete"
+      async
+      defer
+      type="text/Javascript"
+    ></script>
+
+    <path
+      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+    />
+  </body>
+</html>
